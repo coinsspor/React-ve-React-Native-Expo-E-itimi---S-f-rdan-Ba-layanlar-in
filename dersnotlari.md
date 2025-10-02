@@ -935,7 +935,16 @@ function TeskilatSemasi() {
     borderRadius: '5px',
     textAlign: 'center',
     fontSize: '14px',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    width: '32%',
+    display: 'inline-block',
+    verticalAlign: 'top'
+  };
+
+  // Satır stili - Kartları yan yana dizer
+  const satirStili = {
+    marginBottom: '10px',
+    textAlign: 'center'
   };
 
   // Farklı renkler için stil objeleri
@@ -975,9 +984,7 @@ function TeskilatSemasi() {
       <nav style={{
         backgroundColor: '#C62828',
         padding: '15px 20px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
+        textAlign: 'center'
       }}>
         <a href="#" style={{
           color: 'white',
@@ -1047,7 +1054,7 @@ function TeskilatSemasi() {
 
       {/* MAIN - Ana İçerik (Ortalanmış) */}
       <main style={{
-        maxWidth: '1200px',
+        width: '1200px',
         margin: '0 auto',
         padding: '40px 20px',
         backgroundColor: '#f0f0f0'
@@ -1062,9 +1069,12 @@ function TeskilatSemasi() {
           Teşkilat Şeması
         </h1>
 
-        {/* Başkan - En üst */}
-        <div style={{marginBottom: '10px'}}>
-          <div style={maviAcik}>
+        {/* Başkan - En üst - TEK KART */}
+        <div style={satirStili}>
+          <div style={{
+            ...maviAcik,
+            width: '100%'
+          }}>
             <div>LEVENT KANDEMİR</div>
             <div style={{fontSize: '12px', fontWeight: 'normal'}}>
               OKUL MÜDÜRÜ
@@ -1072,9 +1082,12 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* Müdür Yardımcısı */}
-        <div style={{marginBottom: '10px'}}>
-          <div style={sari}>
+        {/* Müdür Yardımcısı - TEK KART */}
+        <div style={satirStili}>
+          <div style={{
+            ...sari,
+            width: '100%'
+          }}>
             <div>B. GÜLŞIN MUTLU</div>
             <div style={{fontSize: '12px', fontWeight: 'normal'}}>
               MÜDÜR BAŞYARDIMCISI
@@ -1082,24 +1095,21 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* 3'lü satır - Mor */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...mor, flex: 1}}>
+        {/* 3'lü satır - Mor - İLK 3 */}
+        <div style={satirStili}>
+          <div style={mor}>
             <div>SÜLEYMAN DALCI</div>
             <div style={{fontSize: '12px', fontWeight: 'normal'}}>
               MÜDÜR YARDIMCISI
             </div>
           </div>
-          <div style={{...mor, flex: 1}}>
+          <div style={mor}>
             <div>EMRULLAH ARSLANTAŞ</div>
             <div style={{fontSize: '12px', fontWeight: 'normal'}}>
               MÜDÜR YARDIMCISI
             </div>
           </div>
-          <div style={{...mor, flex: 1}}>
+          <div style={mor}>
             <div>ESTUĞRUL YAŞARPULAT</div>
             <div style={{fontSize: '12px', fontWeight: 'normal'}}>
               MÜDÜR YARDIMCISI
@@ -1107,24 +1117,21 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* 3'lü satır - Mor 2 */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...mor, flex: 1}}>
+        {/* 3'lü satır - Mor - SON 3 */}
+        <div style={satirStili}>
+          <div style={mor}>
             <div>HAYDAR DOĞAN</div>
             <div style={{fontSize: '12px', fontWeight: 'normal'}}>
               MÜDÜR YARDIMCISI
             </div>
           </div>
-          <div style={{...mor, flex: 1}}>
+          <div style={mor}>
             <div>HİLAL AL SAEDİ</div>
             <div style={{fontSize: '12px', fontWeight: 'normal'}}>
               MÜDÜR YARDIMCISI
             </div>
           </div>
-          <div style={{...mor, flex: 1}}>
+          <div style={mor}>
             <div>AHMET ŞENOL</div>
             <div style={{fontSize: '12px', fontWeight: 'normal'}}>
               MÜDÜR YARDIMCISI
@@ -1132,24 +1139,21 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* 3'lü satır - Açık Mavi */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...maviAcik, flex: 1}}>
+        {/* 3'lü satır - Açık Mavi - İLK 3 */}
+        <div style={satirStili}>
+          <div style={maviAcik}>
             <div>İSA ATALA</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Muhasebe ve İş Müdürü Tasvirosu Alan Şefi
             </div>
           </div>
-          <div style={{...maviAcik, flex: 1}}>
+          <div style={maviAcik}>
             <div>BÜLENT TOPALOĞLU</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Elektronik-Elektronik Alan Şefi
             </div>
           </div>
-          <div style={{...maviAcik, flex: 1}}>
+          <div style={maviAcik}>
             <div style={{fontSize: '13px'}}>**</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Tasarım Teknolojileri ve İçtihatlarına Alan Şefi
@@ -1157,24 +1161,21 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* 3'lü satır - Açık Mavi 2 */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...maviAcik, flex: 1}}>
+        {/* 3'lü satır - Açık Mavi - SON 3 */}
+        <div style={satirStili}>
+          <div style={maviAcik}>
             <div>GÜNDAL KOPAN</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Bilişim Teknolojileri Alan Şefi
             </div>
           </div>
-          <div style={{...maviAcik, flex: 1}}>
+          <div style={maviAcik}>
             <div>ADEM ÇETİN</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Motorlu Araçlar Teknolojisi Alan Şefi
             </div>
           </div>
-          <div style={{...maviAcik, flex: 1}}>
+          <div style={maviAcik}>
             <div>DAVUT ÜNEŞİ</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Metal Teknolojisi Alan Şefi
@@ -1182,24 +1183,21 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* 3'lü satır - Açık Mavi 3 */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...maviAcik, flex: 1}}>
+        {/* 3'lü satır - Açık Mavi - Rehber */}
+        <div style={satirStili}>
+          <div style={maviAcik}>
             <div>OKTAY BOZKURT</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Rehber Öğretmeni
             </div>
           </div>
-          <div style={{...maviAcik, flex: 1}}>
+          <div style={maviAcik}>
             <div>BEDİYE VECİT AKBAŞ</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Rehber Öğretmeni
             </div>
           </div>
-          <div style={{...maviAcik, flex: 1}}>
+          <div style={maviAcik}>
             <div>SEMA TEKÇE</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Rehber Öğretmeni
@@ -1207,24 +1205,21 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* 3'lü satır - Yeşil */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...yesil, flex: 1}}>
+        {/* 3'lü satır - Yeşil - Beden Eğitimi 3 */}
+        <div style={satirStili}>
+          <div style={yesil}>
             <div>HASAN KARATEKE</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Beden Eğitimi Öğretmeni
             </div>
           </div>
-          <div style={{...yesil, flex: 1}}>
+          <div style={yesil}>
             <div>ALTAY ŞEN</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Beden Eğitimi Öğretmeni
             </div>
           </div>
-          <div style={{...yesil, flex: 1}}>
+          <div style={yesil}>
             <div>UĞRAŞ YETKİN</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Beden Eğitimi Öğretmeni
@@ -1232,12 +1227,9 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* Tek kişi - Yeşil */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...yesil, flex: 1, maxWidth: '33%'}}>
+        {/* Tek kişi - Yeşil - Müzik */}
+        <div style={satirStili}>
+          <div style={yesil}>
             <div>TÜLAY AYDEMİR</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Müzik Öğretmeni
@@ -1246,23 +1238,20 @@ function TeskilatSemasi() {
         </div>
 
         {/* 3'lü satır - Pembe */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...pembe, flex: 1}}>
+        <div style={satirStili}>
+          <div style={pembe}>
             <div>SEBİN DENİZ</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Resim-İş Öğretmeni
             </div>
           </div>
-          <div style={{...pembe, flex: 1}}>
+          <div style={pembe}>
             <div>ERCAN MERT</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Boyahçı Öğretmeni
             </div>
           </div>
-          <div style={{...pembe, flex: 1}}>
+          <div style={pembe}>
             <div>AYŞE ULUŞ</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Plak Öğretmeni
@@ -1271,11 +1260,8 @@ function TeskilatSemasi() {
         </div>
 
         {/* Tek kişi - Pembe */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...pembe, flex: 1, maxWidth: '33%'}}>
+        <div style={satirStili}>
+          <div style={pembe}>
             <div>ŞEVVAL YERLİ</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Finki Öğretmeni
@@ -1283,18 +1269,15 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* 2'li satır - Sarı */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...sari, flex: 1}}>
+        {/* 3'lü satır - Sarı - 2 kişi (3. boş) */}
+        <div style={satirStili}>
+          <div style={sari}>
             <div>ERDAL YERLİ</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Coğrafya Öğretmeni
             </div>
           </div>
-          <div style={{...sari, flex: 1}}>
+          <div style={sari}>
             <div>MEHMET YAKUPOĞLU</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Coğrafya Öğretmeni
@@ -1302,24 +1285,21 @@ function TeskilatSemasi() {
           </div>
         </div>
 
-        {/* 3'lü satır - Mor Son */}
-        <div style={{
-          display: 'flex',
-          marginBottom: '10px'
-        }}>
-          <div style={{...mor, flex: 1}}>
+        {/* 3'lü satır - Mor - Tarih */}
+        <div style={satirStili}>
+          <div style={mor}>
             <div>ÖZLEM BEŞER</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Tarih Öğretmeni
             </div>
           </div>
-          <div style={{...mor, flex: 1}}>
+          <div style={mor}>
             <div>KADRİ EFE</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Tarih Öğretmeni
             </div>
           </div>
-          <div style={{...mor, flex: 1}}>
+          <div style={mor}>
             <div>DEMET KOCAKOÇ</div>
             <div style={{fontSize: '11px', fontWeight: 'normal'}}>
               Tarih Öğretmeni
