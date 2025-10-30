@@ -4154,8 +4154,93 @@ export default AritmetikUygulamasi;
 
 ```
 
+## 🎓 lol kartları saatli
+
+```jsx
+import { useState, useEffect } from 'react';
+import ahri from './images/ahri.JPG';
+import garen from './images/garen.JPG';
+import jinx from './images/jinx.JPG';
+import yasuo from './images/yasuo.JPG';
+function OyuncuKarti(props) {
+  return (
+    <div style={{
+      border: '2px solid #555',
+      borderRadius: '12px',
+      padding: '15px',
+      margin: '15px',
+      width: '250px',
+      textAlign: 'center',
+      backgroundColor: '#1e1e1e',
+      color: 'white',
+      boxShadow: '0 4px 10px rgba(0,0,0,0.4)'
+    }}>
+      <img 
+        src={props.resim} 
+        alt={props.ad} 
+        style={{ width: '100%', borderRadius: '10px', marginBottom: '10px' }}
+      />
+      <h3>{props.ad}</h3>
+      <p>⚔️ Güç: {props.guc}</p>
+      <p>⚡ Hız: {props.hiz}</p>
+      <p>✨ Özellik: {props.ozellik}</p>
+  
+      <button style={{
+        marginTop: '10px',
+        padding: '8px 12px',
+        border: 'none',
+        borderRadius: '8px',
+        backgroundColor: '#ff4757',
+        color: 'white',
+        cursor: 'pointer'
+      }}>
+        Savaşa Katıl
+      </button>
+    </div>
+  );
+}
 
 
+  
+
+function App() {
+
+const [saat, setSaat] = useState(new Date());
+  
+  useEffect(() => {
+    // Her saniye saati güncelle
+    const zamanlayici = setInterval(() => {
+      setSaat(new Date());
+    }, 1000);
+    
+    // Component kaldırıldığında zamanlayıcıyı temizle
+    return () => {
+      clearInterval(zamanlayici);
+    };
+  }, []); // Sadece bir kez başlat
+  
+  return (
+    <div style={{ textAlign: 'center', backgroundColor: '#282c34', minHeight: '100vh', padding: '20px' }}>
+      <h1 style={{ color: '#61dafb' }}>🎮 LOL Oyuncu Kartları 🎮</h1>
+      <div style={{ fontSize: '60px', fontWeight: 'bold' }}>
+        {saat.toLocaleTimeString('tr-TR')}
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <OyuncuKarti ad="Ahri" guc="85" hiz="90" ozellik="Büyücü Tilki" resim={ahri} />
+        <OyuncuKarti ad="Garen" guc="95" hiz="70" ozellik="Demacia'nın Gücü" resim={garen} />
+        <OyuncuKarti ad="Jinx" guc="80" hiz="95" ozellik="Çılgın Silah Ustası" resim={jinx} />
+        <OyuncuKarti ad="Yasuo" guc="88" hiz="92" ozellik="Rüzgarın Kılıcı" resim={yasuo} />
+        
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+```
 
 ## 🎓 Öğrendiklerimizin Özeti
 
